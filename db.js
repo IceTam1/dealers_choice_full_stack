@@ -14,9 +14,10 @@ const Flower = sequelize.define('flower', {
 })
 
 const syncAndSeed = async () => {
-    await Flower.create({ name: 'Roses', price: '$12'})
-    await Flower.create({ name: 'Peonies', price: '$10'})
-    await Flower.create({ name: 'Lilies', price: '$8'})
+    await sequelize.sync({ force:true })
+    await Flower.create({ name: 'Roses', price: '12'})
+    await Flower.create({ name: 'Peonies', price: '10'})
+    await Flower.create({ name: 'Lilies', price: '8'})
 
 }
 

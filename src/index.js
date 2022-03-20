@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { Provider, connect } from 'react-redux';
-import axios from 'axios';
 import store, { loadFlowers } from './store';
+import { HashRouter as Router, Route, Link} from 'react-router-dom';
+import Flowers from './Flowers';
+import Nav from './Nav';
+import Flower from './Flower'
 
 
 
+const Home = () => <hr />
 
 const App = connect(
   (state)=> {
@@ -14,8 +18,7 @@ const App = connect(
   (dispatch)=> {
     return {  
      bootstrap: async ()=>  {
-       const flowers = (await axios.get('/api/flowers')).data 
-       dispatch(loadFlowers(flowers));
+       dispatch(loadFlowers());
      }
    }
  }
@@ -26,10 +29,15 @@ const App = connect(
  render(){
    const { flowers } = this.props;  
  return (
+  <Router>
   <div> 
-    
-   
+    <h1> Flower Store </h1>
+    <Route component={ Nav } />
+    <Route component={ Home } exact path='/' />
+    <Route component={ Flowers } exact path='/flowers' />
+    <Route component={ Flower } path='/flowers/:id' />
   </div>
+  </Router> 
   );
  }
 })

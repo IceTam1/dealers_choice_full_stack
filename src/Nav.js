@@ -7,6 +7,7 @@ const Nav = ({ flowers, location: {pathname} })=> {
     <nav>
       <Link to='/'>Home</Link>
       <Link to='/flowers'>Flowers</Link>
+      
     </nav>
   )
 }

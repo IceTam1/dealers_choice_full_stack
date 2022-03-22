@@ -26,12 +26,12 @@ class Create extends Component {
   return (
       <form onSubmit={ save }>
       <input onChange={ ev => this.setState({ name: ev.target.value })} name='name' placeholder='Flower Name' value={ name } />
-      <button disabled={!name}>Create</button>
+      <button disabled={!name}>Add To My Collection</button>
       </form> 
     );
   }
 }
-
+ 
 const mapDispatchToProps = (dispatch, { history })=> {
     return {
        createFlower: async(flower)=> {

@@ -9,7 +9,16 @@ import Flower from './Flower'
 
 
 
-const Home = () => <hr />
+const Home = () => {
+  return (
+    <div className='home'>
+       <div> Flowers </div>
+       <div> Make </div>
+       <div> People </div>
+       <div> Happy. </div>
+    </div>
+  )
+}
 
 const App = connect(
   (state)=> {
@@ -31,8 +40,11 @@ const App = connect(
  return (
   <Router>
   <div> 
-    <h1> Flower Store </h1>
+
+    <h1>The Flower Collection
     <Route component={ Nav } />
+    </h1>
+    
     <Route component={ Home } exact path='/' />
     <Route component={ Flowers } exact path='/flowers' />
     <Route component={ Flower } path='/flowers/:id' />

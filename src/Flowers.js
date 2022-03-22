@@ -12,12 +12,12 @@ const Flowers = ({ createFlower, flowers}) => {
     <div>
     <Route component={ Create } />   
     {/* <button onClick={()=> createFlower(faker.name.firstName())}>Create</button> */}
-    <ul>
+    <ul className='flowerlist'>
     {
        flowers.map (flower => {
            return (
              
-              <li key= {flower.id}> 
+              <li className='flower' key= {flower.id}> 
                <Link to={`/flowers/${ flower.id }`}>
                 {flower.name} 
                </Link>

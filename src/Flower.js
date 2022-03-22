@@ -8,9 +8,17 @@ const Flower = ({ flower, deleteFlower }) => {
      return null; 
   }
    return ( 
-    <div>
-    flower description for {flower.name}
-    <button onClick={()=> deleteFlower(flower)}>Delete Flower</button>
+    <div className='flowerdetail'>
+    <div className='description'> How To Care For {flower.name}
+      <ol className='steps'>
+        <li>Clean Vase thoroughly!</li>
+        <li>Fill the vase two-thirds with fresh, lukewarm water and add your flower food.</li>
+        <li>Remove any foliage that will sit below the waterline to avoid build-up of debris</li>
+        <li>Trim about 2-3cm from the bottom of the stems at a 45-degree angle</li>
+        <li>Change the water regularly after the second day.</li>
+     </ol>
+     </div>
+    <button className='delete' onClick={()=> deleteFlower(flower)}>Remove from My Collection</button>
     </div>
    )
 };

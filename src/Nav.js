@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 const Nav = ({ flowers, location: {pathname} })=> {
   return (
     <nav>
-      <Link to='/'>Home</Link>
-      <Link to='/flowers'>Flowers</Link>
+      <Link to='/'>HOME</Link>
+      <Link to='/flowers'>FLOWERS</Link>
       
     </nav>
   )
